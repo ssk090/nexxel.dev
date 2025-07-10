@@ -12,15 +12,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nexxel.dev"),
   title: {
-    default: "Shoubhit Dash",
-    template: "%s | Shoubhit Dash",
+    default: "Hi, I'm Shivananda Sai.",
+    template: "%s | Shivananda Sai",
   },
   description: "Developer, cardist and maker of things.",
   openGraph: {
-    title: "Shoubhit Dash",
+    title: "Shivananda Sai",
     description: "Developer, cardist and maker of things.",
     url: "https://www.nexxel.dev",
-    siteName: "Shoubhit Dash",
+    siteName: "Shivananda Sai",
     locale: "en_US",
     type: "website",
     images: ["https://www.nexxel.dev/og/home"],
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     "max-snippet": -1,
   },
   twitter: {
-    title: "Shoubhit Dash",
+    title: "Shivananda Sai",
     card: "summary_large_image",
-    creator: "@nexxeln",
+    creator: "@shiv6t9",
   },
 }
 

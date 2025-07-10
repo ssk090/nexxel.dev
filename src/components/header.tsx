@@ -4,26 +4,28 @@ import { MapPin, Building2 } from "lucide-react"
 export function Header() {
   return (
     <header className="mb-16 space-y-4">
-      <h1 className="text-4xl font-bold mb-4 animate-fade-in text-white">
+      <h1 className="text-4xl font-bold mb-5 animate-fade-in text-white">
         <span className="inline-block">
-          <ScrambleText text="shoubhit dash" />
+          <ScrambleText text="shivananda sai" />
         </span>
       </h1>
       <div className="flex flex-col gap-2 text-gray-400">
         <div className="flex items-center gap-2">
           <MapPin className="w-4 h-4" />
-          chennai, india
+          bhubaneswar, odisha, india
         </div>
         <div className="flex items-center gap-2">
           <Building2 className="w-4 h-4" />
-          co-founder and cto @ leapflow
+          software engineer @ altir
         </div>
       </div>
       <p className="leading-relaxed animate-fade-in-up">
-        i&apos;m a 19 y/o cs undergrad student. i love building things and
-        solving problems. i enjoy language design, theoretical computer science
-        and i live on the terminal. if i&apos;m not coding, i&apos;m probably
-        doing cardistry, watching movies or obsessing over mechanical keyboards.
+        frontend developer with 4+ years of experience in designing, developing,
+        and maintaining applications for startups and mncs. demonstrating
+        consistent excellence in delivering customer focused solutions. skilled
+        in modern javascript frameworks and libraries. if i&apos;m not coding,
+        i&apos;m probably doing cardistry, watching movies or obsessing over
+        mechanical keyboards.
       </p>
     </header>
   )

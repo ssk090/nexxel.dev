@@ -17,7 +17,7 @@ export function Posts({ posts }: PostsProps) {
   const selectedItemRef = useRef<HTMLDivElement>(null)
 
   const filteredPosts = posts.filter((item) =>
-    item.metadata.title.toLowerCase().includes(searchQuery.toLowerCase()),
+    item.metadata.title.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
   useEffect(() => {
@@ -43,30 +43,23 @@ export function Posts({ posts }: PostsProps) {
         setSearchQuery("")
         document.activeElement instanceof HTMLElement &&
           document.activeElement.blur()
-      } else if (
-        isSearching &&
-        (((e.ctrlKey || e.metaKey) && (e.key === "j" || e.key === "k")) ||
-          e.key === "ArrowDown" ||
-          e.key === "ArrowUp")
-      ) {
+      } else if (e.key === "ArrowDown" || e.key === "ArrowUp") {
         e.preventDefault()
+        setIsSearching(true)
         setSelectedIndex((prev) => {
-          const isDownward =
-            e.key === "ArrowDown" || ((e.ctrlKey || e.metaKey) && e.key === "j")
-
+          const isDownward = e.key === "ArrowDown"
           const newIndex = isDownward
             ? prev < filteredPosts.length - 1
               ? prev + 1
               : prev
             : prev > 0
-              ? prev - 1
-              : prev
-
+            ? prev - 1
+            : prev
           scrollSelectedIntoView()
           return newIndex
         })
       } else if (isSearching && e.key === "Enter" && filteredPosts.length > 0) {
-        router.push(`/blog/${filteredPosts[selectedIndex].slug}`)
+        router.push(`/writings/${filteredPosts[selectedIndex].slug}`)
       }
     }
 
@@ -102,19 +95,23 @@ export function Posts({ posts }: PostsProps) {
       )}
 
       <div className="space-y-8 sm:space-y-4">
-        {filteredPosts.map((item, index) => (
-          <div
-            key={item.slug}
-            ref={
-              isSearching && index === selectedIndex ? selectedItemRef : null
-            }
-          >
-            <PostItem
-              post={item}
-              isSelected={isSearching && index === selectedIndex}
-            />
-          </div>
-        ))}
+        {filteredPosts.length === 0 ? (
+          <div className="text-center text-gray-400 py-8">posts not found</div>
+        ) : (
+          filteredPosts.map((item, index) => (
+            <div
+              key={item.slug}
+              ref={
+                isSearching && index === selectedIndex ? selectedItemRef : null
+              }
+            >
+              <PostItem
+                post={item}
+                isSelected={isSearching && index === selectedIndex}
+              />
+            </div>
+          ))
+        )}
       </div>
     </>
   )

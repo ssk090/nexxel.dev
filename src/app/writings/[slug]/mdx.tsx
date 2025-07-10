@@ -42,7 +42,7 @@ function CustomLink({
   }
 
   if (href.startsWith("#")) {
-    return <a {...props} />
+    return <a href={href} {...props} />
   }
 
   return <a href={href} target="_blank" rel="noopener noreferrer" {...props} />
@@ -58,7 +58,7 @@ async function Pre({
 }: React.HtmlHTMLAttributes<HTMLPreElement>) {
   // Extract className from the children code tag
   const codeElement = Children.toArray(children).find(
-    (child) => isValidElement(child) && child.type === "code",
+    (child) => isValidElement(child) && child.type === "code"
   ) as React.ReactElement<HTMLPreElement> | undefined
 
   const className = codeElement?.props?.className ?? ""
@@ -110,7 +110,7 @@ function createHeading(level: number) {
           key: `link-${slug}`,
           className: "anchor",
         },
-        children,
+        children
       ),
     ])
   }

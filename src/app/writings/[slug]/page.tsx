@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps) {
       description: post.metadata.description,
       publishedTime,
       type: "article",
-      url: `https://www.nexxel.dev/blog/${post.slug}`,
+      url: `https://www.nexxel.dev/writings/${post.slug}`,
       images: [
         {
           url: `https://www.nexxel.dev/og/blog?title=${post.metadata.title}`,
@@ -62,13 +62,13 @@ export default async function Post({ params }: PageProps) {
             datePublished: post.metadata.date,
             dateModified: post.metadata.date,
             description: post.metadata.description,
-            image: `https://nexxel.dev/og/blog?title=${
+            image: `https://nexxel.dev/og/writings?title=${
               post.metadata.title
             }&top=${formatDate(post.metadata.date)}`,
-            url: `https://nexxel.dev/blog/${post.slug}`,
+            url: `https://nexxel.dev/writings/${post.slug}`,
             author: {
               "@type": "Person",
-              name: "Shoubhit Dash",
+              name: "Shivananda Sai",
             },
           }),
         }}

@@ -19,7 +19,7 @@ async function loadGoogleFont(font: string, text: string) {
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
-  const title = searchParams.get("title") ?? "nexxel's blog"
+  const title = searchParams.get("title") ?? "shiv's writings"
 
   return new ImageResponse(
     (
@@ -37,18 +37,6 @@ export async function GET(request: Request) {
           position: "relative",
         }}
       >
-        <img
-          src="https://www.nexxel.dev/nexxel.jpg"
-          style={{
-            position: "absolute",
-            bottom: "40px",
-            right: "40px",
-            width: "80px",
-            height: "80px",
-            borderRadius: "50%",
-          }}
-        />
-
         <div
           style={{
             display: "flex",

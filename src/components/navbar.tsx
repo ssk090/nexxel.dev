@@ -21,8 +21,8 @@ export function Navbar() {
         case "h":
           router.push("/")
           break
-        case "b":
-          router.push("/blog")
+        case "w":
+          router.push("/writings")
           break
         case "p":
           router.push("/projects")
@@ -35,26 +35,26 @@ export function Navbar() {
   }, [router])
 
   return (
-    <nav className="flex items-center justify-between mb-12 text-sm">
+    <nav className="flex items-center justify-between mb-12 text-sm border-b border-gray-800 pb-4">
       <div className="flex space-x-4">
         <Link
           href="/"
           className="hover:text-accent transition-colors duration-200"
         >
-          [h] home
+          <span className="text-accent">[h]</span> home
         </Link>
         <Link
-          href="/blog"
+          href="/writings"
           prefetch={true}
           className="hover:text-accent transition-colors duration-200"
         >
-          [b] blog
+          <span className="text-accent">[w]</span> writings
         </Link>
         <Link
           href="/projects"
           className="hover:text-accent transition-colors duration-200"
         >
-          [p] projects
+          <span className="text-accent">[p]</span> projects
         </Link>
       </div>
     </nav>
